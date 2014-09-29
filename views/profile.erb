@@ -1,0 +1,99 @@
+<% if !me %>
+
+
+<form action="/login" method="GET">
+  Name : <input type="text" value="<%= "Player #{request.ip}"%>" name="name"/>
+  <input type="submit" value="Login" />
+</form>
+
+
+
+<% else %>
+<div id="profile_title">
+<h1><%= me.name %></h1>
+</div>
+<div id="logout_button">
+<a href="/clear">Logout</a>
+</div>
+<div id="top_menu">
+  <a href="/">Home Page</a>
+</div>
+
+<div id="player_title">
+<h3>Player Details</h3>
+</div>
+
+<div id="player_details_table">
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Value</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name</td>
+      <td><%=me.name%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Health</td>
+      <td><%=me.health%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Target Action</td>
+      <td><%=me.target_action%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Permanents</td>
+      <td><%=me.permanents%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>World</td>
+      <td><%=me.world%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Deck</td>
+      <td><%=me.deck%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hand</td>
+      <td><%=me.hand%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>AI</td>
+      <td><%=me.ai%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Graveyard</td>
+      <td><%=me.graveyard%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Mana Pool</td>
+      <td><%=me.mana_pool%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Flags</td>
+      <td><%=me.flags%></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Played</td>
+      <td><%=me.played%></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<% end %>

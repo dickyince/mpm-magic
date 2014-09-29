@@ -58,6 +58,10 @@ class App <  Sinatra::Application
     @players = []
   end
 
+  get "/profile" do
+    erb :profile
+  end
+
   get "/" do
     erb :home
   end
